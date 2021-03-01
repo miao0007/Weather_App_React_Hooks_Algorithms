@@ -16,14 +16,27 @@ function App() {
     ${city},${country}&APPID=${API_KEY}`)
     .then(res =>res.json())
     .then(data =>data)
-    setWeather({
-      data: apiData,
-      city:apiData.city,
-      country: apiData.country,
-      description:apiData.weather[0].description,
-      temperature:apiData.main.temp,
-      error:""
-    })
+    if(city && country) {
+      setWeather({
+        data: apiData,
+        city:apiData.city,
+        country: apiData.country,
+        description:apiData.weather[0].description,
+        temperature:apiData.main.temp,
+        error:""
+      }
+      )
+    } else {
+      setWeather({
+        data: '',
+        city: '',
+        country: '',
+        description: '',
+        temperature: '',
+        error: 'Please Type A City And Country'
+      })
+    }
+    
 
   }
   return (
