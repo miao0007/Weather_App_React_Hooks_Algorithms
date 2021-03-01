@@ -6,7 +6,7 @@ const Weather = ({description, city, country, error, temperature}) => {
         const keyWords = ['cloudy','clouds','cloud','overcast']
         for (let i = 0; i <weatherDescription.length; i++){
             if(keyWords.includes(weatherDescription[i])) {
-                console.log(weatherDescription[i], ': we have match')
+                return <img src='https://media.freestocktextures.com/cache/74/8b/748ba3fe5976d8b03219a64851d2790d.jpg' />
             }
         }
         console.log(keyWords);
